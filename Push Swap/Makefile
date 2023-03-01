@@ -10,11 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =
+SRCS = rotate.c, push.c, reverse.c, swap.c 
 
 MY_OBJECTS = ${SRCS:.c=.o}
 
-NAME = libft.a
+NAME = push_swap.a
 
 CC = gcc
 
