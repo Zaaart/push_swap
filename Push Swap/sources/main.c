@@ -6,7 +6,7 @@
 /*   By: dydumont <dydumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:32:28 by dydumont          #+#    #+#             */
-/*   Updated: 2023/03/06 13:11:11 by dydumont         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:12:00 by dydumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,6 @@ int	main(int argc, char **argv)
 		rotate_stack_a(stack_a, numbers_stack_a);
 	else if (numbers_stack_a[1] == 3)
 		sort_3_numbers(stack_a, numbers_stack_a);
-	else if (numbers_stack_a[1] == 5)
-		sort_5_numbers(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
 	else
-		sort_beyond_3_and_5_numbers(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
-	free_stacks(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
-	return (0);
+		return (0);
 }

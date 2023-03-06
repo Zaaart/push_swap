@@ -6,7 +6,7 @@
 #    By: dydumont <dydumont@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/27 14:23:57 by dydumont          #+#    #+#              #
-#    Updated: 2023/03/06 12:58:23 by dydumont         ###   ########.fr        #
+#    Updated: 2023/03/06 13:55:38 by dydumont         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-SOURCE  =  sources/operations/*.c \
-		   sources/sorting/*.c \
+SOURCE  =  sources/moove/*.c \
+		   sources/algo/*.c \
 		   sources/utils/*.c \
 		   sources/main.c
 
@@ -28,8 +28,8 @@ all: $(NAME)
 
 clean:
 	@rm -rf sources/*.o
-	@rm -rf sources/operations/*.o
-	@rm -rf sources/sorting/*.o
+	@rm -rf sources/moove/*.o
+	@rm -rf sources/algo/*.o
 	@rm -rf sources/utils/*.o
 
 fclean: clean
