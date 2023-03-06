@@ -6,7 +6,7 @@
 /*   By: dydumont <dydumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:12:04 by dydumont          #+#    #+#             */
-/*   Updated: 2023/03/01 14:13:13 by dydumont         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:12:32 by dydumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ void	reverse_rotate_stack_b(long *stack_b, int *numbers_stack_b);
 void	reverse_rotate_stack_a_and_stack_b(long *stack_a, long *stack_b,
 			int *numbers_stack_a, int *numbers_stack_b);
 /*Push_stack (123 8910 ==> 8910 123)*/
+void	push_stack_a(long *stack_a, long *stack_b,
+			int *numbers_stack_a, int *numbers_stack_b);
+void	push_stack_b(long *stack_a, long *stack_b,
+			int *numbers_stack_a, int *numbers_stack_b);
 
 /*Swap (123 ==> 213)*/
 void	swap_stack_a(long *stack_a, int *numbers_stack_a);
@@ -37,8 +41,29 @@ void	swap_stack_b(long *stack_b, int *numbers_stack_b);
 void	swap_stack_a_and_stack_b(long *stack_a, long *stack_b,
 			int *numbers_stack_a, int *numbers_stack_b);
 /*ALGO------------------------------------------------------------------------*/
+void	sort_3_numbers(long *stack_a, int *numbers_in_stack_a);
+void	sort_5_numbers(long *stack_a, long *stack_b, int *numbers_stack_a, int *numbers_stack_b);
+void	sort_beyond_3_and_5_numbers(long *stack_a, long *stack_b, int *numbers_stack_a, int *numbers_stack_b);
 /*UTILS-----------------------------------------------------------------------*/
-
+void	parameters(long *stack_a, long *stack_b,
+			int *numbers_stack_a, int *numbers_stack_b);
+void	free_stacks(long *stack_a, long *stack_b,
+			int *numbers_stack_a, int *numbers_stack_b);
+int		stack_size(int argc, char **argv);
+int		repeated_numbers(long *stack_a, int numbers_stack_a);
+void	ft_reallocation(long *pointer, int startsize, int newsize);
+int		ft_strlen(const char *str);
+int		ft_isdigit(int i);
+int		is_only_numbers_in_the_stacks(char *numbers);
+int		number_limits(long *stack_a, int numbers_stack_a);
+int		is_stack_sorted(long *stack_a, int *numbers_stack_a);
+int		ft_atoi(const char *str);
+void	free_string(char **str);
+int		numbers_input(long *stack_a, int *numbers_stack_a,
+			 char **argv, char**numbers_list);
+int		standard_input(long *stack_a, int *numbers_stack_a, char **argv);
+int		seperating_input_numbers(long *stack_a, int *numbers_stack_a,
+			char **argv);
 /*Main------------------------------------------------------------------------*/
 void	free_and_exit(int *numbers_stack_a, int *numbers_stack_b);
 void	free_and_exit_errors(int *numbers_stack_a, int *numbers_stack_b);

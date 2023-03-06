@@ -6,9 +6,11 @@
 /*   By: dydumont <dydumont@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:32:28 by dydumont          #+#    #+#             */
-/*   Updated: 2023/03/01 14:13:12 by dydumont         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:11:11 by dydumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/push_swap.h"
 
 void	free_and_exit(int *numbers_stack_a, int *numbers_stack_b)
 {
@@ -17,7 +19,7 @@ void	free_and_exit(int *numbers_stack_a, int *numbers_stack_b)
 	exit(0);
 }
 
-void	free_and_exit_errors(int *numbers_stack_a, int *numbers_stack_b)
+void	free_and_exit_without_errors(int *numbers_stack_a, int *numbers_stack_b)
 {
 	free(numbers_stack_a);
 	free(numbers_stack_b);
@@ -25,8 +27,7 @@ void	free_and_exit_errors(int *numbers_stack_a, int *numbers_stack_b)
 	exit(0);
 }
 
-void	check_parameters(int argc, char **argv, int *numbers_stack_a,
-	int *numbers_stack_b)
+void	check_parameters(int argc, char **argv, int *numbers_stack_a, int *numbers_stack_b)
 {
 	int	i;
 	int	j;
@@ -38,17 +39,17 @@ void	check_parameters(int argc, char **argv, int *numbers_stack_a,
 	while (i < argc)
 	{
 		if ((argv[i][ft_strlen(argv[i]) - 1] == ' ') || (argv[i][0] == ' '))
-			free_and_exit_errors(numbers_stack_a, numbers_stack_b);
+			free_and_exit_without_errors(numbers_stack_a, numbers_stack_b);
 		j = 0;
 		while (j < ft_strlen(argv[i]))
 		{
 			if (((argv[i][j] < 48) || (argv[i][j] > 57)) && (argv[i][j] != 32))
 			{
 				if (argv[i][j] != 45)
-					free_and_exit_errors(numbers_stack_a, numbers_stack_b);
+					free_and_exit_without_errors(numbers_stack_a, numbers_stack_b);
 			}
 			if ((argv[i][j] == 32) && (argv[i][j + 1] == 32))
-				free_and_exit_errors(numbers_stack_a, numbers_stack_b);
+				free_and_exit_without_errors(numbers_stack_a, numbers_stack_b);
 			j++;
 		}
 		i++;
@@ -75,4 +76,16 @@ int	main(int argc, char **argv)
 	set_numbers(numbers_stack_a, numbers_stack_b, argc);
 	stack_a = (long *)malloc(sizeof(long) * stack_size(argc, argv));
 	stack_b = (long *)malloc(sizeof(long) * stack_size(argc, argv));
+	if ((seperating_input_numbers(stack_a, numbers_stack_a, argv) == -1) || (is_stack_sorted(stack_a, numbers_stack_a) == 0))
+		free_stacks(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
+	if ((numbers_stack_a[1] == 2) && (stack_a[0] > stack_a[1]))
+		rotate_stack_a(stack_a, numbers_stack_a);
+	else if (numbers_stack_a[1] == 3)
+		sort_3_numbers(stack_a, numbers_stack_a);
+	else if (numbers_stack_a[1] == 5)
+		sort_5_numbers(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
+	else
+		sort_beyond_3_and_5_numbers(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
+	free_stacks(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
+	return (0);
 }
