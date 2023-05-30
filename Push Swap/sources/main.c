@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dydumont <dydumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dydumont <dydumont@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 12:32:28 by dydumont          #+#    #+#             */
-/*   Updated: 2023/03/06 14:12:00 by dydumont         ###   ########.fr       */
+/*   Updated: 2023/05/30 10:50:30 by dydumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ int	main(int argc, char **argv)
 		rotate_stack_a(stack_a, numbers_stack_a);
 	else if (numbers_stack_a[1] == 3)
 		sort_3_numbers(stack_a, numbers_stack_a);
+	else if (numbers_stack_a[1] == 5)
+		sort_5_numbers(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
 	else
 		return (0);
 }

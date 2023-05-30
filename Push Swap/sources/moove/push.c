@@ -26,7 +26,7 @@ void	push_stack_a(long *stack_a, long *stack_b, int *numbers_stack_a, int *numbe
 	stack_a[0] = stack_b[0];
 	i = 0;
 	while (i < *numbers_stack_b)
-	{ 
+	{
 		stack_b[i] = stack_b[i + 1];
 		i++;
 	}

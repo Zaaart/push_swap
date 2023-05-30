@@ -6,7 +6,7 @@
 /*   By: dydumont <dydumont@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:08:52 by dydumont          #+#    #+#             */
-/*   Updated: 2023/05/09 09:00:38 by dydumont         ###   ########.fr       */
+/*   Updated: 2023/05/14 19:23:53 by dydumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,3 @@ void	sort_5_numbers(long *stack_a, long *stack_b, int *numbers_stack_a, int *num
 			second_stack(stack_a, stack_b, numbers_stack_a, numbers_stack_b);
 	}
 }
-

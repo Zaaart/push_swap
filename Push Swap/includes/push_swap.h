@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dydumont <dydumont@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dydumont <dydumont@student.42.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 14:12:04 by dydumont          #+#    #+#             */
-/*   Updated: 2023/03/06 13:48:30 by dydumont         ###   ########.fr       */
+/*   Updated: 2023/05/14 19:23:50 by dydumont         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ void	swap_stack_a_and_stack_b(long *stack_a, long *stack_b,
 			int *numbers_stack_a, int *numbers_stack_b);
 /*ALGO------------------------------------------------------------------------*/
 void	sort_3_numbers(long *stack_a, int *numbers_in_stack_a);
-//void	sort_5_numbers(long *stack_a, long *stack_b, int *numbers_stack_a, int *numbers_stack_b);
+void	sort_5_numbers(long *stack_a, long *stack_b, int *numbers_stack_a,
+			 int *numbers_stack_b);
+void	sort_beyond_3_and_5_numbers(long *stack_a, long *stack_b,
+			int *numbers_in_stack_a, int *numbers_in_stack_b);
+
 /*UTILS-----------------------------------------------------------------------*/
 void	parameters(long *stack_a, long *stack_b,
 			int *numbers_stack_a, int *numbers_stack_b);
